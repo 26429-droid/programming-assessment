@@ -1,28 +1,14 @@
-
-#First going to import random and time
+#First I imported time and random
 import time
 import random
-#Global variables
 
-#Next, I am going to store all my countries inside of a dictionary
+# First I imported time and random
+import time
+import random
 
-first_question = [
+# Using dictionary to store all the values for the specific areas
+jungle = [
     {
-        'Country':'India',
-        'Answer': 'Incorrect',
-        'Marks':random.randint(0, -1),
-    },
-    {
-        'Country': 'China',
-        'Answer': 'Correct',
-        'Marks': random.randint(1,3),
-
-
-    },
-    {
-        'Country': 'New Zealand',
-        'Answer': 'Incorrect',
-        'Marks': random.randint(0, -1),
-
-    },
+        "name": "wooden pickaxe"
+    }
 ]
