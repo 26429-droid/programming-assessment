@@ -1,10 +1,28 @@
-# This is a sample Python script.
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+#First going to import random and time
+import time
+import random
+#Global variables
+
+#Next, I am going to store all my countries inside of a dictionary
+
+first_question = [
+    {
+        'Country':'India',
+        'Answer': 'Incorrect',
+        'Marks':random.randint(0, -1),
+    },
+    {
+        'Country': 'China',
+        'Answer': 'Correct',
+        'Marks': random.randint(1,3),
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    },
+    {
+        'Country': 'New Zealand',
+        'Answer': 'Incorrect',
+        'Marks': random.randint(0, -1),
 
+    },
+]
