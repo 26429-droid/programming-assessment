@@ -125,7 +125,26 @@ kapiti= [
 
 te_papa = [
     {
+        "Type": "Human",
+        "Name": "Quiz Master",
+        "Special Ability": "None",
 
-    }
+    },
+
+    {
+        "Type": "Quiz",
+        "Name": "Quiz of Wellington",
+        "Duration": random.randint(2,5),
+        "Number of questions": (5),
+        "Special Ability": "None",
+    },
+
+    {
+        "Type": "Quiz",
+        "Name": "Quiz of Pokemomn",
+        "Duration": random.randint(1,2),
+        "Number of questions": (3),
+        "Special Ability": "None",
+    },
 ]
 
