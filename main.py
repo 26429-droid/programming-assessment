@@ -128,35 +128,4 @@ te_papa = [
 
     }
 ]
-palmerston_north = [
-    {
-        "Type":"Tool",
-        "Name":"Car",
-        "Durabilty":random.randint(500,1000),
-        "Special Abilty":"None",
-    },
-
-]
-
-kapiti= [
-    {
-        "Type":"Tool",
-        "Name":"Fishing Rod",
-        "Durabilty":random.randint(500,700),
-        "Special Abilty": "None",
-
-    },
-
-    {
-        "Type":"Animal",
-        "Name":"Long Finned Eel",
-        "Health":random.randint(25,40),
-        "Special Abilty":"Splash",
-        "Spawnrate":random.randint(10,100),
-
-    },
-
-
-
-]
 
