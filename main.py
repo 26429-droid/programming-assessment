@@ -167,6 +167,15 @@ def main_menu():
     print("3. Exit")
     choice = input("Enter your choice")
 
+    if choice == '1':
+        print("Welcome to the amazing journey to Te Papa!")
+    elif choice == '2':
+        print("Here are the player instructions")
+    elif choice == '3':
+        print("Bye, have a nice day!lol")
+    else:
+        print("Invalid input!")
+
 
 
 main_menu()
