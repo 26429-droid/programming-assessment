@@ -1,9 +1,9 @@
-#First I imported time and random.
+# First I imported time and random.
 
 import time
 import random
 
-#My Global Variables
+# My Global Variables
 jungle = []
 palmerston_north = []
 kapiti = []
@@ -12,160 +12,160 @@ te_papa = []
 # Using dictionary to store all the values for the specific areas amd items that are in those areas.
 jungle = [
     {
-        "Type":"Tool",
+        "Type": "Tool",
         "Name": "Wooden Pickaxe",
-        "Durability": random.randint(50,100),
+        "Durability": random.randint(50, 100),
         "Special Ability": "None",
 
     },
     {
-        "Type":"Object",
+        "Type": "Object",
         "Name": "Tree",
-       "Durability": random.randint(1,5),
+        "Durability": random.randint(1, 5),
         "Special Ability": "None",
     },
 
     {
-        "Type":"Tool",
+        "Type": "Tool",
         "Name": "Machete",
-        "Durability":random.randint(250,400),
-        "Special Ability":"Destroy All",
+        "Durability": random.randint(250, 400),
+        "Special Ability": "Destroy All",
 
     },
 
     {
-        "Type":"Object",
-        "Name":"Bush",
-        "Durability":random.randint(10,25),
+        "Type": "Object",
+        "Name": "Bush",
+        "Durability": random.randint(10, 25),
         "Special Ability": "None",
 
-
     },
 
     {
-        "Type":"Animal",
+        "Type": "Animal",
         "Name": "Parrot",
-        "Health":random.randint(25,30),
+        "Health": random.randint(25, 30),
         "Special Ability": "Gust",
-        "Spawnrate":random.randint(20,50)
+        "Spawnrate": random.randint(20, 50)
     },
 
     {
-        "Type":"Animal",
+        "Type": "Animal",
         "Name": "Bear",
-        'Health':random.randint(90,100),
+        'Health': random.randint(90, 100),
         "Special Ability": "Roar",
-        "Spawnrate":random.randint(1,2)
+        "Spawnrate": random.randint(1, 2)
     },
 ]
 palmerston_north = [
     {
-        "Type":"Tool",
-        "Name":"Car",
-        "Durability":random.randint(500,1000),
-        "Special Ability":"None",
+        "Type": "Tool",
+        "Name": "Car",
+        "Durability": random.randint(500, 1000),
+        "Special Ability": "None",
     },
 
     {
-        "Type":"Human",
+        "Type": "Human",
         "Name": "Ren",
-        "Health":random.randint(100,120),
+        "Health": random.randint(100, 120),
         "Special Ability": "Guide",
     },
 
 ]
 
-kapiti= [
+kapiti = [
     {
-        "Type":"Tool",
-        "Name":"Fishing Rod",
-        "Durability":random.randint(500,700),
+        "Type": "Tool",
+        "Name": "Fishing Rod",
+        "Durability": random.randint(500, 700),
         "Special Ability": "None",
 
-    },
-
-    {
-        "Type":"Animal",
-        "Name":"Long Finned Eel",
-        "Health":random.randint(25,40),
-        "Special Ability":"Splash",
-        "Spawnrate":random.randint(14,100),
-
-    },
-
-    {
-        "Type":"Tool",
-        "Name": "Money",
-        "Special Ability": "None",
-        "Durability":random.randint(5,20),
-        "Value": random.randint(5,100),
-
-        
     },
 
     {
         "Type": "Animal",
-        "Name": "Eagle", 
-        "Health": random.randint(100,200),
-        "Spawnrate":random.randint(5,6),
-        "Special Ability":"Windwisp",
+        "Name": "Long Finned Eel",
+        "Health": random.randint(25, 40),
+        "Special Ability": "Splash",
+        "Spawnrate": random.randint(14, 100),
+
     },
 
     {
-        "Type":"Object",
-        "Name": "Bus",
-        "Durability":random.randint(100,200),
-        "Spawnrate":random.randint(25,50),
-        "Special Ability":"Route taker",
+        "Type": "Tool",
+        "Name": "Money",
+        "Special Ability": "None",
+        "Durability": random.randint(5, 20),
+        "Value": random.randint(5, 100),
 
     },
 
+    {
+        "Type": "Animal",
+        "Name": "Eagle",
+        "Health": random.randint(100, 200),
+        "Spawnrate": random.randint(5, 6),
+        "Special Ability": "Windwisp",
+    },
+
+    {
+        "Type": "Object",
+        "Name": "Bus",
+        "Durability": random.randint(100, 200),
+        "Spawnrate": random.randint(25, 50),
+        "Special Ability": "Route taker",
+
+    },
 
 ]
 
 te_papa = [
-   {
-       "Type": "Human",
-       "Name": "Quiz Master",
-       "Special Ability": "None",
+    {
+        "Type": "Human",
+        "Name": "Quiz Master",
+        "Special Ability": "None",
 
+    },
 
-   },
+    {
+        "Type": "Quiz",
+        "Name": "Quiz of Wellington",
+        "Duration": random.randint(2, 5),
+        "Number of questions": (5),
+        "Special Ability": "None",
+    },
 
-
-   {
-       "Type": "Quiz",
-       "Name": "Quiz of Wellington",
-       "Duration": random.randint(2, 5),
-       "Number of questions": (5),
-       "Special Ability": "None",
-   },
-
-
-   {
-       "Type": "Quiz",
-       "Name": "Quiz of Pokemon",
-       "Duration": random.randint(1, 2),
-       "Number of questions": (3),
-       "Special Ability": "None",
-   },
-   {
-       "Type": "Quiz",
-       "Name": "Quiz of Countries",
-       "Duration": random.randint(1, 2),
-       "Number of questions": (3),
-       "Special Ability": "None",
-   },
+    {
+        "Type": "Quiz",
+        "Name": "Quiz of Pokemon",
+        "Duration": random.randint(1, 2),
+        "Number of questions": (3),
+        "Special Ability": "None",
+    },
+    {
+        "Type": "Quiz",
+        "Name": "Quiz of Countries",
+        "Duration": random.randint(1, 2),
+        "Number of questions": (3),
+        "Special Ability": "None",
+    },
 ]
 
-#I am going to be making my main menu here and creating my first funtion that inputs to the user on what is their name is and age. Also will show the options like play game, exit, and player instructions.
+
+# I am going to be making my main menu here and creating my first funtion that inputs to the user on what is their name is and age. Also will show the options like play game, exit, and player instructions.
 def main_menu():
-    name = (input("What is your name?"))
-    age = int(input("WHat is your age?"))
-    print("1. Play Game")
-    print("2. Player Instructions")
-    print("3. Exit")
-    choice = input("Enter your choice")
+    while True:
+        try:
+            name = (input("What is your name?"))
+            age = int(input("WHat is your age?"))
+            break  # exists the loop and starts in the menu
+        except ValueError:
+            print("1. Play Game")
+            print("2. Player Instructions")
+            print("3. Exit")
+            choice = input("Enter your choice")
+
 
     if choice == '1':
         print("Welcome to the amazing journey to Te Papa!")
@@ -175,7 +175,5 @@ def main_menu():
         print("Bye, have a nice day!lol")
     else:
         print("Invalid input!")
-
-
 
 main_menu()
