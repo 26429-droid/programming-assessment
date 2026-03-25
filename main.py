@@ -46,7 +46,7 @@ jungle = [
         "Type":"Animal",
         "Name": "Parrot",
         "Health":random.randint(25,30),
-        "Special Abilty": "Gust",
+        "Special Ability": "Gust",
         "Spawnrate":random.randint(20,50)
     },
 
@@ -54,7 +54,7 @@ jungle = [
         "Type":"Animal",
         "Name": "Bear",
         'Health':random.randint(90,100),
-        "Special Abilty": "Roar",
+        "Special Ability": "Roar",
         "Spawnrate":random.randint(1,2)
     },
 ]
@@ -124,27 +124,49 @@ kapiti= [
 ]
 
 te_papa = [
-    {
-        "Type": "Human",
-        "Name": "Quiz Master",
-        "Special Ability": "None",
+   {
+       "Type": "Human",
+       "Name": "Quiz Master",
+       "Special Ability": "None",
 
-    },
 
-    {
-        "Type": "Quiz",
-        "Name": "Quiz of Wellington",
-        "Duration": random.randint(2,5),
-        "Number of questions": (5),
-        "Special Ability": "None",
-    },
+   },
 
-    {
-        "Type": "Quiz",
-        "Name": "Quiz of Pokemomn",
-        "Duration": random.randint(1,2),
-        "Number of questions": (3),
-        "Special Ability": "None",
-    },
+
+   {
+       "Type": "Quiz",
+       "Name": "Quiz of Wellington",
+       "Duration": random.randint(2, 5),
+       "Number of questions": (5),
+       "Special Ability": "None",
+   },
+
+
+   {
+       "Type": "Quiz",
+       "Name": "Quiz of Pokemon",
+       "Duration": random.randint(1, 2),
+       "Number of questions": (3),
+       "Special Ability": "None",
+   },
+   {
+       "Type": "Quiz",
+       "Name": "Quiz of Countries",
+       "Duration": random.randint(1, 2),
+       "Number of questions": (3),
+       "Special Ability": "None",
+   },
 ]
 
+#I am going to be making my main menu here and creating my first funtion that inputs to the user on what is their name is and age. Also will show the options like play game, exit, and player instructions.
+def main_menu():
+    name = (input("What is your name?"))
+    age = int(input("WHat is your age?"))
+    print("1. Play Game")
+    print("2. Player Instructions")
+    print("3. Exit")
+    choice = input("Enter your choice")
+
+
+
+main_menu()
