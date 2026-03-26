@@ -161,19 +161,29 @@ def main_menu():
             age = int(input("WHat is your age?"))
             break  # exists the loop and starts in the menu
         except ValueError:
-            print("1. Play Game")
-            print("2. Player Instructions")
-            print("3. Exit")
-            choice = input("Enter your choice")
+            print("Invalid Input!, please enter numbers in age and string in name!")
 
 
-    if choice == '1':
-        print("Welcome to the amazing journey to Te Papa!")
-    elif choice == '2':
-        print("Here are the player instructions")
-    elif choice == '3':
-        print("Bye, have a nice day!lol")
-    else:
-        print("Invalid input!")
+    while True:
+        print("1. Play Game")
+        print("2. Player Instructions")
+        print("3. Exit")
+        choice = input("Enter your choice")
+
+
+        if choice == '1':
+                    print("Welcome to the amazing journey to Te Papa!")
+        elif choice == '2':
+                    print("---PLAYER INSTRUCTIONS---")
+                    print("1. You will start in a jungle and your goal is to reach Te Papa but before you do you will over 3 other distinct areas")
+                    print("2. Beware as you will encouter different type of animals, objects, tools, quizez, amd humans which will may give you an advantage or disadvantage")
+                    print("3. Also, when you reach Te Papa you can do 2 out of 3 of intriguing quizes which are short in time but big in fun!")
+                    print("4. If you lose all your health then you have to restart from the jungle")
+                    print("5. GOOD LUCk")
+                    print(input("\nPress enter to go back to menu"))
+        elif choice == '3':
+                    print("Bye, have a nice day!lol")
+        else:
+            print("Invalid input!")
 
 main_menu()
