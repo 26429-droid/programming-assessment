@@ -6,6 +6,7 @@ import random
 import sys
 
 # My Global Variables
+# My Global Variables
 jungle = []
 palmerston_north = []
 kapiti = []
@@ -15,21 +16,28 @@ player_health = 100
 jungle = [
     {
         "Type": "Tool",
+        "Type": "Tool",
         "Name": "Wooden Pickaxe",
+        "Durability": random.randint(50, 100),
         "Durability": random.randint(50, 100),
         "Special Ability": "None",
 
     },
     {
         "Type": "Object",
+        "Type": "Object",
         "Name": "Tree",
+        "Durability": random.randint(1, 5),
         "Durability": random.randint(1, 5),
         "Special Ability": "None",
     },
 
     {
         "Type": "Tool",
+        "Type": "Tool",
         "Name": "Machete",
+        "Durability": random.randint(250, 400),
+        "Special Ability": "Destroy All",
         "Durability": random.randint(250, 400),
         "Special Ability": "Destroy All",
 
@@ -39,13 +47,18 @@ jungle = [
         "Type": "Object",
         "Name": "Bush",
         "Durability": random.randint(10, 25),
+        "Type": "Object",
+        "Name": "Bush",
+        "Durability": random.randint(10, 25),
         "Special Ability": "None",
 
     },
 
     {
         "Type": "Animal",
+        "Type": "Animal",
         "Name": "Parrot",
+        "Health": random.randint(25, 30),
         "Health": random.randint(25, 30),
         "Special Ability": "Gust",
         "Spawnrate_Safe": random.randint(5, 30),
@@ -54,7 +67,9 @@ jungle = [
 
     {
         "Type": "Animal",
+        "Type": "Animal",
         "Name": "Bear",
+        'Health': random.randint(90, 100),
         'Health': random.randint(90, 100),
         "Special Ability": "Roar",
         "Spawnrate_Safe": random.randint(1, 5),
@@ -75,11 +90,17 @@ palmerston_north = [
         "Name": "Car",
         "Durability": random.randint(500, 1000),
         "Special Ability": "None",
+        "Type": "Tool",
+        "Name": "Car",
+        "Durability": random.randint(500, 1000),
+        "Special Ability": "None",
     },
 
     {
         "Type": "Human",
+        "Type": "Human",
         "Name": "Ren",
+        "Health": random.randint(100, 120),
         "Health": random.randint(100, 120),
         "Special Ability": "Guide",
     },
@@ -87,7 +108,11 @@ palmerston_north = [
 ]
 
 kapiti = [
+kapiti = [
     {
+        "Type": "Tool",
+        "Name": "Fishing Rod",
+        "Durability": random.randint(500, 700),
         "Type": "Tool",
         "Name": "Fishing Rod",
         "Durability": random.randint(500, 700),
@@ -101,13 +126,22 @@ kapiti = [
         "Health": random.randint(25, 40),
         "Special Ability": "Splash",
         "Spawnrate": random.randint(14, 100),
+        "Type": "Animal",
+        "Name": "Long Finned Eel",
+        "Health": random.randint(25, 40),
+        "Special Ability": "Splash",
+        "Spawnrate": random.randint(14, 100),
 
     },
 
     {
         "Type": "Tool",
+        "Type": "Tool",
         "Name": "Money",
         "Special Ability": "None",
+        "Durability": random.randint(5, 20),
+        "Value": random.randint(5, 100),
+
         "Durability": random.randint(5, 20),
         "Value": random.randint(5, 100),
 
@@ -119,11 +153,19 @@ kapiti = [
         "Health": random.randint(100, 200),
         "Spawnrate": random.randint(5, 6),
         "Special Ability": "Windwisp",
+        "Name": "Eagle",
+        "Health": random.randint(100, 200),
+        "Spawnrate": random.randint(5, 6),
+        "Special Ability": "Windwisp",
     },
 
     {
         "Type": "Object",
+        "Type": "Object",
         "Name": "Bus",
+        "Durability": random.randint(100, 200),
+        "Spawnrate": random.randint(25, 50),
+        "Special Ability": "Route taker",
         "Durability": random.randint(100, 200),
         "Spawnrate": random.randint(25, 50),
         "Special Ability": "Route taker",
@@ -137,7 +179,12 @@ te_papa = [
         "Type": "Human",
         "Name": "Quiz Master",
         "Special Ability": "None",
+    {
+        "Type": "Human",
+        "Name": "Quiz Master",
+        "Special Ability": "None",
 
+    },
     },
 
     {
@@ -147,7 +194,28 @@ te_papa = [
         "Number of questions": (5),
         "Special Ability": "None",
     },
+    {
+        "Type": "Quiz",
+        "Name": "Quiz of Wellington",
+        "Duration": random.randint(2, 5),
+        "Number of questions": (5),
+        "Special Ability": "None",
+    },
 
+    {
+        "Type": "Quiz",
+        "Name": "Quiz of Pokemon",
+        "Duration": random.randint(1, 2),
+        "Number of questions": (3),
+        "Special Ability": "None",
+    },
+    {
+        "Type": "Quiz",
+        "Name": "Quiz of Countries",
+        "Duration": random.randint(1, 2),
+        "Number of questions": (3),
+        "Special Ability": "None",
+    },
     {
         "Type": "Quiz",
         "Name": "Quiz of Pokemon",
