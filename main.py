@@ -5,231 +5,164 @@ import time
 import random
 import sys
 
+#My Global Variables
 # My Global Variables
-# My Global Variables
-jungle = []
+jungle_area = []
 palmerston_north = []
 kapiti = []
 te_papa = []
 player_health = 100
 # Using dictionary to store all the values for the specific areas amd items that are in those areas.
-jungle = [
+jungle_area = [
     {
-        "Type": "Tool",
-        "Type": "Tool",
+        "Type":"Tool",
         "Name": "Wooden Pickaxe",
-        "Durability": random.randint(50, 100),
-        "Durability": random.randint(50, 100),
+        "Damage":random.randint(20,40),
+        "Durability": random.randint(50,100),
         "Special Ability": "None",
-
     },
     {
-        "Type": "Object",
-        "Type": "Object",
+        "Type":"Object",
         "Name": "Tree",
-        "Durability": random.randint(1, 5),
-        "Durability": random.randint(1, 5),
+        "Durability": random.randint(1,5),
         "Special Ability": "None",
+  
     },
 
     {
-        "Type": "Tool",
-        "Type": "Tool",
+        "Type":"Tool",
         "Name": "Machete",
-        "Durability": random.randint(250, 400),
-        "Special Ability": "Destroy All",
-        "Durability": random.randint(250, 400),
-        "Special Ability": "Destroy All",
+        "Durability":random.randint(250,400),
+        "Special Ability":"Destroy All",
 
     },
-
     {
-        "Type": "Object",
-        "Name": "Bush",
-        "Durability": random.randint(10, 25),
-        "Type": "Object",
-        "Name": "Bush",
+        "Type":"Object",
+        "Name":"Bush",
         "Durability": random.randint(10, 25),
         "Special Ability": "None",
 
     },
-
     {
-        "Type": "Animal",
-        "Type": "Animal",
+        "Type":"Animal",
         "Name": "Parrot",
-        "Health": random.randint(25, 30),
         "Health": random.randint(25, 30),
         "Special Ability": "Gust",
         "Spawnrate_Safe": random.randint(5, 30),
         "Spawnrate_Dangerous":random.randint(50, 75),
     },
-
     {
-        "Type": "Animal",
-        "Type": "Animal",
+        "Type":"Animal",
         "Name": "Bear",
-        'Health': random.randint(90, 100),
-        'Health': random.randint(90, 100),
+        'Health':random.randint(90,100),
         "Special Ability": "Roar",
         "Spawnrate_Safe": random.randint(1, 5),
         "Spawnrate_Dangerous":random.randint(40, 60),
     },
-
-        {
+    {
         "Type": "Human",
         "Name": "John",
         "Health": random.randint(80, 100),
         "Special Ability": "Guide",
-    },
-
+    }
 ]
-palmerston_north = [
-    {
-        "Type": "Tool",
-        "Name": "Car",
-        "Durability": random.randint(500, 1000),
-        "Special Ability": "None",
-        "Type": "Tool",
-        "Name": "Car",
-        "Durability": random.randint(500, 1000),
-        "Special Ability": "None",
-    },
 
-    {
-        "Type": "Human",
+palmerston_north = [
+{
+        "Type":"Tool",
+        "Name":"Car",
+        "Special Ability":"None",
+        "Durability": random.randint(500, 1000),
+},
+
+{
         "Type": "Human",
         "Name": "Ren",
-        "Health": random.randint(100, 120),
-        "Health": random.randint(100, 120),
+        "Health":random.randint(100,120),
         "Special Ability": "Guide",
-    },
+},
 
 ]
 
-kapiti = [
-kapiti = [
-    {
-        "Type": "Tool",
-        "Name": "Fishing Rod",
-        "Durability": random.randint(500, 700),
-        "Type": "Tool",
-        "Name": "Fishing Rod",
-        "Durability": random.randint(500, 700),
+kapiti= [
+      {
+        "Type":"Tool",
+        "Name":"Fishing Rod",
+        "Durability":random.randint(500,700),
         "Special Ability": "None",
+      },
+      {
+        "Type":"Animal",
+        "Name":"Long Finned Eel",
+        "Health":random.randint(25,40),
+        "Special Ability":"Splash",
+        "Spawnrate":random.randint(14,100),
+      },
 
-    },
 
-    {
-        "Type": "Animal",
-        "Name": "Long Finned Eel",
-        "Health": random.randint(25, 40),
-        "Special Ability": "Splash",
-        "Spawnrate": random.randint(14, 100),
-        "Type": "Animal",
-        "Name": "Long Finned Eel",
-        "Health": random.randint(25, 40),
-        "Special Ability": "Splash",
-        "Spawnrate": random.randint(14, 100),
-
-    },
-
-    {
-        "Type": "Tool",
-        "Type": "Tool",
+      {
+        "Type":"Tool",
         "Name": "Money",
         "Special Ability": "None",
-        "Durability": random.randint(5, 20),
-        "Value": random.randint(5, 100),
+        "Durability":random.randint(5,20),
+        "Value": random.randint(5,100),
+      },
 
-        "Durability": random.randint(5, 20),
-        "Value": random.randint(5, 100),
 
-    },
-
-    {
+      {
         "Type": "Animal",
-        "Name": "Eagle",
-        "Health": random.randint(100, 200),
-        "Spawnrate": random.randint(5, 6),
-        "Special Ability": "Windwisp",
-        "Name": "Eagle",
-        "Health": random.randint(100, 200),
-        "Spawnrate": random.randint(5, 6),
-        "Special Ability": "Windwisp",
-    },
+        "Name": "Eagle", 
+        "Health": random.randint(100,200),
+        "Spawnrate":random.randint(5,6),
+        "Special Ability":"Windwisp",
+      },
 
-    {
-        "Type": "Object",
-        "Type": "Object",
+
+
+      {
+        "Type":"Object",
         "Name": "Bus",
+        "Special Ability":"Route taker",
         "Durability": random.randint(100, 200),
         "Spawnrate": random.randint(25, 50),
-        "Special Ability": "Route taker",
-        "Durability": random.randint(100, 200),
-        "Spawnrate": random.randint(25, 50),
-        "Special Ability": "Route taker",
+      },
 
-    },
 
 ]
 
 te_papa = [
-    {
-        "Type": "Human",
-        "Name": "Quiz Master",
-        "Special Ability": "None",
-    {
-        "Type": "Human",
-        "Name": "Quiz Master",
-        "Special Ability": "None",
+   {
+       "Type": "Human",
+       "Name": "Quiz Master",
+       "Special Ability": "None",
 
-    },
-    },
 
-    {
-        "Type": "Quiz",
-        "Name": "Quiz of Wellington",
-        "Duration": random.randint(2, 5),
-        "Number of questions": (5),
-        "Special Ability": "None",
-    },
-    {
-        "Type": "Quiz",
-        "Name": "Quiz of Wellington",
-        "Duration": random.randint(2, 5),
-        "Number of questions": (5),
-        "Special Ability": "None",
-    },
+   },
 
-    {
-        "Type": "Quiz",
-        "Name": "Quiz of Pokemon",
-        "Duration": random.randint(1, 2),
-        "Number of questions": (3),
-        "Special Ability": "None",
-    },
-    {
-        "Type": "Quiz",
-        "Name": "Quiz of Countries",
-        "Duration": random.randint(1, 2),
-        "Number of questions": (3),
-        "Special Ability": "None",
-    },
-    {
-        "Type": "Quiz",
-        "Name": "Quiz of Pokemon",
-        "Duration": random.randint(1, 2),
-        "Number of questions": (3),
-        "Special Ability": "None",
-    },
-    {
-        "Type": "Quiz",
-        "Name": "Quiz of Countries",
-        "Duration": random.randint(1, 2),
-        "Number of questions": (3),
-        "Special Ability": "None",
-    },
+
+   {
+       "Type": "Quiz",
+       "Name": "Quiz of Wellington",
+       "Duration": random.randint(2, 5),
+       "Number of questions": (5),
+       "Special Ability": "None",
+   },
+
+
+   {
+       "Type": "Quiz",
+       "Name": "Quiz of Pokemon",
+       "Duration": random.randint(1, 2),
+       "Number of questions": (3),
+       "Special Ability": "None",
+   },
+   {
+       "Type": "Quiz",
+       "Name": "Quiz of Countries",
+       "Duration": random.randint(1, 2),
+       "Number of questions": (3),
+       "Special Ability": "None",
+   },
 ]
 
 #Added slow text for a more dramatic text navigation between John and the user.
@@ -249,14 +182,25 @@ def jungle(name):
        slow_text("So its up to you, do you want to go to the side which is longer which is safer but with worse  in tools or short route with more animals but better tools!")
        slow_text("1. Safe route, Wooden Pickaxe")
        slow_text("2. The shorter route, Machete ")
-       route = input("Choose your route: ")
-
-       if route == "1":
-            slow_text("Congrats scaredy cat! Welcome to the safer  but looonger route!")
-       elif route == '2':
-            slow_text("Congrats vicious warrior! Welcome to the *dangerous* but shorter route!")
-       else:
+       while True:
+        route = input("Choose your route: ")
+#This if statement checks if a parrot encounter is what its suppose to be for the safe route and if it is then a parrot appears and lowers health. It does this by rolling a random number from 1 to 100 .
+        if route == "1":
+                slow_text("Congrats scaredy cat! Welcome to the safer  but looonger route!")
+                for animal in jungle_area:
+                    if animal["Name"] == "Parrot":
+                            roll = random.randint(1,100)
+                            if roll < animal ["Spawnrate_Safe"]:
+                                slow_text("A parrot attacks you!")
+                                player_health -= 10
+                                slow_text(f"You have {player_health} left, be careful!")
+                break
+        elif route == '2':
+                slow_text("Congrats vicious warrior! Welcome to the *dangerous* but shorter route!")
+                break
+        else:
             slow_text("Invalid Choice! Please try again!")
+            
     
 # I am going to be making my main menu here and creating my first funtion that inputs to the user on what is their name is and age. Also will show the options like play game, exit, and player instructions.
 def main_menu():
@@ -295,5 +239,4 @@ def main_menu():
             print("Invalid input!")
 
 main_menu()
-
 
