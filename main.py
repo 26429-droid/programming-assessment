@@ -1,12 +1,11 @@
 
-# First I imported time, random, and sys (for the third choice).
+ #First I imported time, random, and sys (for the third choice).
 
 import time
 import random
 import sys
 
 #My Global Variables
-# My Global Variables
 jungle_area = []
 palmerston_north = []
 kapiti = []
@@ -174,6 +173,11 @@ def slow_text (text):
 #This function is to describe the Jungle route and the instructiosn and routes untill they reach the second route.
 def jungle(name):
        global player_health # tells python to use the global variable and also can change the the health.
+       player_health = 100
+       pickaxe_durability = 0
+       for item in jungle_area:
+             if item["Name"] == "Wooden Pickaxe":
+                   pickaxe_durability = item["Durability"]
        slow_text("You find yourself in a wide jungle with no clue on whats going on.")
        slow_text("Suddenly a man appears from the bushes *John*.")
        slow_text(f"Hello {name} welcome to the jungle")
@@ -184,7 +188,7 @@ def jungle(name):
        slow_text("2. The shorter route, Machete ")
        while True:
         route = input("Choose your route: ")
-#This if statement checks if a parrot encounter is what its suppose to be for the safe route and if it is then a parrot appears and lowers health. It does this by rolling a random number from 1 to 100 .
+#This if statement checks if a parrot encounter is what its suppose to be for the safe route and if it is then a parrot appears and lowers health. It does this by rolling a random number from 1 to 100 . The user has a chance to defend but lose durabilty or let the parrot attack and lose health.
         if route == "1":
                 slow_text("Congrats scaredy cat! Welcome to the safer  but looonger route!")
                 for animal in jungle_area:
@@ -192,9 +196,37 @@ def jungle(name):
                             roll = random.randint(1,100)
                             if roll < animal ["Spawnrate_Safe"]:
                                 slow_text("A parrot attacks you!")
-                                player_health -= 10
-                                slow_text(f"You have {player_health} left, be careful!")
-                break
+                                slow_text("You have a choice!")
+                                slow_text("1. Fight with your wooden pickaxe.")
+                                slow_text("2. Let it attack you.")
+                                parrot_choice = input("What do you want?")
+                                if parrot_choice == "1":
+                                      pickaxe_durability -= random.randint(4,10)
+                                      slow_text("You swung your pickaxe at the parrot and it scared it off!")
+                                      slow_text(f"Pickaxe durability: {pickaxe_durability} ")
+                                elif parrot_choice == "2":
+                                      player_health -= random.randint(3,10)
+                                      slow_text("The parrot attacked you!")
+                                      slow_text(f"You have {player_health} left, be careful!")
+                                else:
+                                      slow_text("Invalid choice!")
+                #This is the second challenge. First the user will have to decide if they want to chop the tree or stay stuck. If they do chop the tree they lose durabilty but if they don't they stay stuck.
+                while True:
+                      slow_text("A tree is blocking your way!")
+                      slow_text("What will you do?")
+                      slow_text("1. Chop it with your Wooden Pickaxe")
+                      slow_text("2. Try to go around")
+                      action = input("What do you choose?")
+                      if action == "1":
+                            pickaxe_durability -= 20
+                            slow_text(f"You chopped the tree, you may proceed!")
+                            break
+                      elif action == "2":
+                            slow_text("Hmm try again...")
+                      else:
+                            slow_text("Invalid choice!")
+                
+                break 
         elif route == '2':
                 slow_text("Congrats vicious warrior! Welcome to the *dangerous* but shorter route!")
                 break
