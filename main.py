@@ -47,8 +47,8 @@ jungle_area = [
         "Name": "Parrot",
         "Health": random.randint(25, 30),
         "Special Ability": "Gust",
-        "Spawnrate_Safe": random.randint(5, 30),
-        "Spawnrate_Dangerous":random.randint(50, 75),
+        "Spawnrate_Safe": random.randint(10, 75),
+        "Spawnrate_Dangerous":random.randint(75, 100),
     },
     {
         "Type":"Animal",
@@ -168,7 +168,7 @@ te_papa = [
 def slow_text (text):
        for character in text:
               print(character, end='', flush = True)
-              time.sleep (0.07)
+              time.sleep (0.03)
        print()
 #This function is to describe the Jungle route and the instructiosn and routes untill they reach the second route.
 def jungle(name):
@@ -206,10 +206,10 @@ def jungle(name):
                                       slow_text(f"Pickaxe durability: {pickaxe_durability} ")
                                 elif parrot_choice == "2":
                                       player_health -= random.randint(3,10)
-                                      slow_text("The parrot attacked you!")
+                                      slow_text("The parrot used gust on you!")
                                       slow_text(f"You have {player_health} left, be careful!")
                                 else:
-                                      slow_text("Invalid choice!")
+                                      slow_text("Invalid choice!")  
                 #This is the second challenge. First the user will have to decide if they want to chop the tree or stay stuck. If they do chop the tree they lose durabilty but if they don't they stay stuck.
                 while True:
                       slow_text("A tree is blocking your way!")
@@ -220,6 +220,56 @@ def jungle(name):
                       if action == "1":
                             pickaxe_durability -= 20
                             slow_text(f"You chopped the tree, you may proceed!")
+                            slow_text("You continue across the jungle into the thick undergrowth.")
+                            slow_text("Even if the jungle seems endless in its space.")
+                            for animal in jungle_area:
+                                  if animal ["Name"] == "Parrot":
+                                              slow_text("The pesky parrot is back!")
+                                              slow_text("1. Fight with your Wooden Pickaxe")
+                                              slow_text("2. Let it attack you with gust!")
+                                              parrot_choice2 = input("What do you choose?")
+                                              if parrot_choice2 == "1":
+                                                    pickaxe_durability -= random.randint(4,10)
+                                                    slow_text("You swung the pickaxe and it killed it!")
+                                                    slow_text(f"Pickaxe durablilty: {pickaxe_durability}")
+                                                    
+                                              elif parrot_choice2 == "2":
+                                                    player_health -= random.randint(3,10)
+                                                    slow_text("The parrot used gust on you!")
+                                                    slow_text(f"You have {player_health}")
+                                                    
+                                              else:
+                                                    slow_text("Invalid Choice!")
+                                                    
+                                              slow_text("You go through the undergrowth...")
+                                              while True:
+                                                    slow_text("A thick bush has been discovered and its blocking your path!")
+                                                    slow_text("1. Chop it with your wooden pickaxe.")
+                                                    slow_text("2. Try to go around.")
+                                                    action2 = input("What do you choose?")
+                                                    if action2 =="1":
+                                                          pickaxe_durability -= 10
+                                                          slow_text(f"Pickaxe Durabilty {pickaxe_durability}")
+                                                          break
+                                                    elif action2 == "2":
+                                                          slow_text("Hmmm that won't work sorry!")
+                                                    else:
+                                                          slow_text("Invalid input!")
+                                              for animal in jungle_area:
+                                                      if animal ["Name"] == "Parrot":
+                                                                  slow_text("Another parrot has appeared!")
+                                                                  slow_text("1. Fight with your Wooden Pickaxe.")
+                                                                  slow_text("2. Let it attack you with gust!")
+                                                                  parrot_choice3 = input("What will you choose?")
+                                                                  if parrot_choice3 == "1":
+                                                                        pickaxe_durability -= random.randint (4,10)
+                                                                        slow_text("You swung the Pickaxe and it ran away!")
+                                                                        slow_text(f"Pickaxe durability: {pickaxe_durability}") 
+                                                                        break
+                                                                  elif parrot_choice3 == "2":
+                                                                        player_health -= 10
+                                                                        slow_text("The parrot used gust on you!")
+                                                                        slow_text(f"You have {player_health} left be careful!")
                             break
                       elif action == "2":
                             slow_text("Hmm try again...")
