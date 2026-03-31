@@ -170,6 +170,13 @@ def slow_text (text):
               print(character, end='', flush = True)
               time.sleep (0.03)
        print()
+def palmerston_north_area(name):
+      global player_health
+      slow_text("You have finally arrived in Palmerston North!")
+      slow_text("Suddenly a person approaches you...")
+      slow_text("His name is Ren!")
+      slow_text(f"Ren: Welcome {name} to the second area Palmerston North!")
+      slow_text("Ren: Come in the car and enjoy the ride down to the Kapiti region!")
 #This function is to describe the Jungle route and the instructiosn and routes untill they reach the second route.
 def jungle(name):
        global player_health # tells python to use the global variable and also can change the the health.
@@ -270,6 +277,9 @@ def jungle(name):
                                                                         player_health -= 10
                                                                         slow_text("The parrot used gust on you!")
                                                                         slow_text(f"You have {player_health} left be careful!")
+                                                                        slow_text("You have finally made it through the jungle!")
+                                                                        slow_text("Palmerston North is just ahead!")
+                                                                        palmerston_north_area(name)
                             break
                       elif action == "2":
                             slow_text("Hmm try again...")
