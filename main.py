@@ -279,7 +279,8 @@ def jungle(name):
                                                                         slow_text(f"You have {player_health} left be careful!")
                                                                         slow_text("You have finally made it through the jungle!")
                                                                         slow_text("Palmerston North is just ahead!")
-                                                                        palmerston_north_area(name)
+                                              palmerston_north_area(name)
+                                              break
                             break
                       elif action == "2":
                             slow_text("Hmm try again...")
@@ -289,6 +290,106 @@ def jungle(name):
                 break 
         elif route == '2':
                 slow_text("Congrats vicious warrior! Welcome to the *dangerous* but shorter route!")
+                machete_durability = 0
+                for item in jungle_area:
+                      if item ["Name"] == "Machete":
+                            machete_durability = item["Durability"]
+                slow_text("The machete has destoyed all the bushes and trees for you thanks to its special ability *destroy all*")
+                slow_text("But there is dangerous creatures who can dismantle you, be careful!")
+                for animal in jungle_area:
+                      if animal["Name"] == "Bear":
+                            bear_health = animal["Health"]
+                            bear_health -= random.randint(40,50)
+                            slow_text("A bear has appeared!")
+                            slow_text("1. Attack the bear ")
+                            slow_text("2. let the bear attack you")
+                            bear_choice = input("What will you choose?")
+                            if bear_choice == "1":
+                                  slow_text("You sliced the skin of the bear with the sheer force and sharpness of the blade")
+                                  slow_text(f"The bear health goes down by 50!")
+                                  machete_durability -= random.randint(3,5)
+                                  slow_text(f"Machete durability: {machete_durability} ")
+                            elif bear_choice == "2":
+                                  player_health -= random.randint(20,30) 
+                                  slow_text("The bear used Roar and mauled you!")
+                                  slow_text(f"You have {player_health} health left!")
+                            else:
+                             slow_text("Invalid choice!")
+                for animal in jungle_area:
+                      if animal["Name"] == "Bear":
+                            slow_text("The bear is ready to fight again!")
+                            slow_text("1. Attack the bear")
+                            slow_text("2. Let the bear attack you")
+                            bear_choice2 = input("What will you choose?")
+                            if bear_choice2 == "1":
+                                  slow_text("You have finally killed the bear!")
+                                  machete_durability -= random.randint(3,5)
+                                  slow_text(f"MAchete durability : {machete_durability}")
+                            elif bear_choice2 == "2":
+                                  player_health -= random.randint(20,30)
+                                  slow_text("The bear attacked you again!")
+                                  slow_text(f"You have {player_health} health left! ")
+                            else:
+                                  slow_text("Invalid input!")
+                for animal in jungle_area:
+                      if animal ["Name"] == "Parrot":
+                            slow_text("A peaky parrot has appeared to attack you!")
+                            slow_text("1. Let it attack you")
+                            slow_text("2. You attack with Machete")
+                            parrot_choice4 = input("What will choose?")
+                            if parrot_choice4 == "1":
+                                  machete_durability -= random.randint(3,5)
+                                  slow_text("The Machete destroyed the parrot")
+                                  slow_text(f"Machete Durability: {machete_durability}")
+                            elif parrot_choice4 == "2":
+                                  player_health -= random.randint(2,3)
+                                  slow_text("The parrot used gust!")
+                                  slow_text(f"You have {player_health} health left")
+                            else:
+                                  slow_text("Invalid choice!")
+                for animal in jungle_area:
+                      if animal ["Name"] == "Bear":
+                            slow_text("Another bear appears!")
+                            slow_text("1. Attack the bear")
+                            slow_text("2. Let the bear attack you!")
+                            bear_choice3 = input("What do you choose?")
+                            if bear_choice3 == "1":
+                                  slow_text("You hit the bear for 50 health!")
+                                  machete_durability -= random.randint(3,5)
+                                  slow_text(f"Machete durability: {machete_durability}")
+                            elif bear_choice3 == "2":
+                                  player_health -= random.randint(20,30)
+                                  slow_text("The bear nauled you one more time!")
+                                  slow_text(f"You have {player_health} health left!")
+                            else:
+                                  slow_text("Invalid choice!")
+                for animal in jungle_area:
+                      if animal ["Name"]  == "Bear":
+                        slow_text("The bear hasnn't given up!")
+                        slow_text("1. Attack the bear")
+                        slow_text("Let the bear attack you!")
+                        bear_choice4 = input("What do you choose?")
+                        if bear_choice4 == "1":
+                            slow_text("You hit the bear for 50 health")
+                            machete_durability -= random.randint(3,5)
+                            slow_text("The bear is finally dead!")
+                            slow_text(f"Machete durability: {machete_durability}.")
+                        elif bear_choice4 == "2":
+                            player_health -= random.randint(20,30)
+                            slow_text("The bear hurt you again!")
+                            slow_text(f"You have {player_health} health left")
+                        else:
+                            slow_text("Invalid Input!")
+                            break 
+                            
+                slow_text("You have survived the dangerous route! Congrats!")
+                slow_text("You are ready to move on to Palmerston North")
+                palmerston_north_area(name)
+                  
+                            
+
+                                  
+                                  
                 break
         else:
             slow_text("Invalid Choice! Please try again!")
