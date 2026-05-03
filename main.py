@@ -170,6 +170,23 @@ def slow_text (text):
               print(character, end='', flush = True)
               time.sleep (0.03)
        print()
+
+def game_over(name):
+      global player_health
+      player_health = 100
+      slow_text("Oh no! You have run out of health!")
+      slow_text("GAME OVER!")
+      slow_text("Going to the main menuu ...")
+      
+
+def check_dead(name):
+      if player_health <=0:
+            game_over(name)
+            
+            return True
+      return False
+
+
 def palmerston_north_area(name):
       global player_health
       slow_text("You have finally arrived in Palmerston North!")
@@ -177,6 +194,13 @@ def palmerston_north_area(name):
       slow_text("His name is Ren!")
       slow_text(f"Ren: Welcome {name} to the second area Palmerston North!")
       slow_text("Ren: Come in the car and enjoy the ride down to the Kapiti region!")
+
+      slow_text("The road steches ahead as the city fades away...")
+      slow_text("You drive through open fields and winding roads...")
+      slow_text("3 hours later...")
+      slow_text("Ren said: Welcome to the Kapiti region, your next goal is to get to Te Papa, best of luck!")
+
+      kapiti(name)
 #This function is to describe the Jungle route and the instructiosn and routes untill they reach the second route.
 def jungle(name):
        global player_health # tells python to use the global variable and also can change the the health.
@@ -215,6 +239,7 @@ def jungle(name):
                                       player_health -= random.randint(3,10)
                                       slow_text("The parrot used gust on you!")
                                       slow_text(f"You have {player_health} left, be careful!")
+                                      if check_dead(name): return
                                 else:
                                       slow_text("Invalid choice!")  
                 #This is the second challenge. First the user will have to decide if they want to chop the tree or stay stuck. If they do chop the tree they lose durabilty but if they don't they stay stuck.
@@ -226,7 +251,7 @@ def jungle(name):
                       action = input("What do you choose?")
                       if action == "1":
                             pickaxe_durability -= 20
-                            slow_text(f"You chopped the tree, you may proceed!")
+                            slow_text(f"You chopped the tree, you may proceed! Pickaxe durability: {pickaxe_durability}")
                             slow_text("You continue across the jungle into the thick undergrowth.")
                             slow_text("Even if the jungle seems endless in its space.")
                             for animal in jungle_area:
@@ -244,6 +269,7 @@ def jungle(name):
                                                     player_health -= random.randint(3,10)
                                                     slow_text("The parrot used gust on you!")
                                                     slow_text(f"You have {player_health}")
+                                                    if check_dead(name): return
                                                     
                                               else:
                                                     slow_text("Invalid Choice!")
@@ -279,6 +305,7 @@ def jungle(name):
                                                                         slow_text(f"You have {player_health} left be careful!")
                                                                         slow_text("You have finally made it through the jungle!")
                                                                         slow_text("Palmerston North is just ahead!")
+                                                                        if check_dead(name):return
                                               palmerston_north_area(name)
                                               break
                             break
@@ -313,6 +340,7 @@ def jungle(name):
                                   player_health -= random.randint(20,30) 
                                   slow_text("The bear used Roar and mauled you!")
                                   slow_text(f"You have {player_health} health left!")
+                                  if check_dead(name): return 
                             else:
                              slow_text("Invalid choice!")
                 for animal in jungle_area:
@@ -329,6 +357,7 @@ def jungle(name):
                                   player_health -= random.randint(20,30)
                                   slow_text("The bear attacked you again!")
                                   slow_text(f"You have {player_health} health left! ")
+                                  if check_dead(name): return
                             else:
                                   slow_text("Invalid input!")
                 for animal in jungle_area:
@@ -345,6 +374,7 @@ def jungle(name):
                                   player_health -= random.randint(2,3)
                                   slow_text("The parrot used gust!")
                                   slow_text(f"You have {player_health} health left")
+                                  if check_dead(name): return
                             else:
                                   slow_text("Invalid choice!")
                 for animal in jungle_area:
@@ -361,6 +391,7 @@ def jungle(name):
                                   player_health -= random.randint(20,30)
                                   slow_text("The bear nauled you one more time!")
                                   slow_text(f"You have {player_health} health left!")
+                                  if check_dead(name): return
                             else:
                                   slow_text("Invalid choice!")
                 for animal in jungle_area:
@@ -378,8 +409,10 @@ def jungle(name):
                             player_health -= random.randint(20,30)
                             slow_text("The bear hurt you again!")
                             slow_text(f"You have {player_health} health left")
+                            if check_dead(name): return
                         else:
                             slow_text("Invalid Input!")
+                        
                             break 
                             
                 slow_text("You have survived the dangerous route! Congrats!")
@@ -394,6 +427,11 @@ def jungle(name):
         else:
             slow_text("Invalid Choice! Please try again!")
             
+
+def kapiti(name):
+
+                  break
+
     
 # I am going to be making my main menu here and creating my first funtion that inputs to the user on what is their name is and age. Also will show the options like play game, exit, and player instructions.
 def main_menu():
